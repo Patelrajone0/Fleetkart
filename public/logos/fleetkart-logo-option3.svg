@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="opt3FleetGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3D52A0" />
+      <stop offset="100%" stop-color="#7091E6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Icon: 3 Interlocking Group Vehicles in Fleet Formation -->
+  <g transform="translate(14, 15)">
+    <!-- Base Shield -->
+    <path d="M35 2 C54 2, 70 12, 70 34 C70 54, 45 67, 35 70 C25 67, 0 54, 0 34 C0 12, 16 2, 35 2 Z" fill="#3D52A0" />
+    
+    <!-- Top Lead Car -->
+    <path d="M25 24 C27 18, 43 18, 45 24 L51 32 L19 32 Z" fill="#FFFFFF" />
+    <circle cx="24" cy="33" r="3" fill="#7091E6" />
+    <circle cx="46" cy="33" r="3" fill="#7091E6" />
+
+    <!-- Left Wing Car (Fleet Member 1) -->
+    <path d="M14 38 C15 34, 27 34, 28 38 L32 44 L10 44 Z" fill="#ADBBDA" opacity="0.9" />
+    <circle cx="13" cy="45" r="2.5" fill="#FFFFFF" />
+    <circle cx="29" cy="45" r="2.5" fill="#FFFFFF" />
+
+    <!-- Right Wing Car (Fleet Member 2) -->
+    <path d="M42 38 C43 34, 55 34, 56 38 L60 44 L38 44 Z" fill="#7091E6" />
+    <circle cx="41" cy="45" r="2.5" fill="#FFFFFF" />
+    <circle cx="57" cy="45" r="2.5" fill="#FFFFFF" />
+
+    <!-- Fleet Energy Arrow at bottom -->
+    <polygon points="35,53 43,60 38,60 38,64 32,64 32,60 27,60" fill="#FFFFFF" opacity="0.95" />
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(102, 28)">
+    <text x="0" y="26" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="900" fill="#1E2E4E" letter-spacing="-0.5">
+      FLEET<tspan fill="#7091E6">KART</tspan>
+    </text>
+    
+    <g transform="translate(0, 36)">
+      <rect x="0" y="0" width="46" height="18" rx="6" fill="#3D52A0" />
+      <text x="23" y="12.5" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="800" fill="#FFFFFF" letter-spacing="1.5" text-anchor="middle">
+        INDIA
+      </text>
+      <text x="56" y="13" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600" fill="#3D52A0">
+        Bulk Buyer Tender Network
+      </text>
+    </g>
+  </g>
+</svg>

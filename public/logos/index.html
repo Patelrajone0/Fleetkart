@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fleetkart India — Official Logo Suite & Offline Download</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background: #EDE8F5;
+      color: #1E293B;
+      padding: 32px 16px;
+    }
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #ADBBDA;
+      color: #1E2E4E;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 9999px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 900;
+      color: #3D52A0;
+      margin-bottom: 6px;
+    }
+    p.subtitle {
+      font-size: 14px;
+      color: #64748B;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 520px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #ADBBDA;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(61, 82, 160, 0.08);
+      display: flex;
+      flex-col: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(61, 82, 160, 0.14);
+    }
+    .preview-box {
+      padding: 36px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
+      border-bottom: 1px solid #EDE8F5;
+      min-height: 150px;
+    }
+    .preview-box.dark {
+      background: #0F172A;
+    }
+    .preview-box img {
+      max-width: 100%;
+      height: 70px;
+      object-fit: contain;
+    }
+    .card-body {
+      padding: 20px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #1E2E4E;
+      margin-bottom: 4px;
+    }
+    .card-desc {
+      font-size: 12px;
+      color: #64748B;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .btn-primary {
+      background: #7091E6;
+      color: #FFFFFF;
+      border: 1px solid #7091E6;
+    }
+    .btn-primary:hover {
+      background: #3D52A0;
+      border-color: #3D52A0;
+    }
+    .btn-secondary {
+      background: #EDE8F5;
+      color: #3D52A0;
+      border: 1px solid #ADBBDA;
+    }
+    .btn-secondary:hover {
+      background: #ADBBDA;
+    }
+    footer {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 12px;
+      color: #8697C4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">Official Brand Assets</span>
+      <h1>Fleetkart India Logo Suite</h1>
+      <p class="subtitle">5 High-Resolution Vector Options for Group Car Buying. Click below to save offline as SVG or PNG.</p>
+    </header>
+
+    <div class="grid">
+      <!-- Option 1 -->
+      <div class="card">
+        <div class="preview-box">
+          <img src="/logos/fleetkart-logo-option1.svg" alt="Option 1: The Velocity Fleet Wing">
+        </div>
+        <div class="card-body">
+          <div>
+            <h3 class="card-title">Option 1: The Velocity Fleet Wing</h3>
+            <p class="card-desc">Features a dual aerodynamic wing that forms a modern letter 'F' and a forward-surging car silhouette on a rounded indigo shield.</p>
+          </div>
+          <div class="actions">
+            <a href="/logos/fleetkart-logo-option1.svg" download="Fleetkart-Logo-Option1.svg" class="btn btn-primary">⬇ Download SVG</a>
+            <button onclick="downloadPng('/logos/fleetkart-logo-option1.svg', 'Fleetkart-Logo-Option1.png')" class="btn btn-secondary">⬇ Download PNG</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option 2 -->
+      <div class="card">
+        <div class="preview-box">
+          <img src="/logos/fleetkart-logo-option2.svg" alt="Option 2: The Car-Kart Synergy">
+        </div>
+        <div class="card-body">
+          <div>
+            <h3 class="card-title">Option 2: The Car-Kart Synergy</h3>
+            <p class="card-desc">A continuous ribbon path combining a sleek automobile roofline with a modern shopping kart basket and green bulk-token dot.</p>
+          </div>
+          <div class="actions">
+            <a href="/logos/fleetkart-logo-option2.svg" download="Fleetkart-Logo-Option2.svg" class="btn btn-primary">⬇ Download SVG</a>
+            <button onclick="downloadPng('/logos/fleetkart-logo-option2.svg', 'Fleetkart-Logo-Option2.png')" class="btn btn-secondary">⬇ Download PNG</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option 3 -->
+      <div class="card">
+        <div class="preview-box">
+          <img src="/logos/fleetkart-logo-option3.svg" alt="Option 3: The Interlocking Fleet Shield">
+        </div>
+        <div class="card-body">
+          <div>
+            <h3 class="card-title">Option 3: The Interlocking Fleet Shield</h3>
+            <p class="card-desc">Three synchronized cars moving in tight formation inside a shield, representing 5 buyers joining together to unlock wholesale dealer tenders.</p>
+          </div>
+          <div class="actions">
+            <a href="/logos/fleetkart-logo-option3.svg" download="Fleetkart-Logo-Option3.svg" class="btn btn-primary">⬇ Download SVG</a>
+            <button onclick="downloadPng('/logos/fleetkart-logo-option3.svg', 'Fleetkart-Logo-Option3.png')" class="btn btn-secondary">⬇ Download PNG</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option 4 -->
+      <div class="card">
+        <div class="preview-box">
+          <img src="/logos/fleetkart-logo-option4.svg" alt="Option 4: Luxury Steering Monogram">
+        </div>
+        <div class="card-body">
+          <div>
+            <h3 class="card-title">Option 4: Luxury Steering Wheel Emblem</h3>
+            <p class="card-desc">A circular precision automotive steering wheel emblem enclosing a slanted triple-bar 'F' monogram. High-end OEM luxury aesthetic.</p>
+          </div>
+          <div class="actions">
+            <a href="/logos/fleetkart-logo-option4.svg" download="Fleetkart-Logo-Option4.svg" class="btn btn-primary">⬇ Download SVG</a>
+            <button onclick="downloadPng('/logos/fleetkart-logo-option4.svg', 'Fleetkart-Logo-Option4.png')" class="btn btn-secondary">⬇ Download PNG</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option 5 -->
+      <div class="card" style="grid-column: 1 / -1; max-width: 700px; margin: 0 auto; width: 100%;">
+        <div class="preview-box" style="background: #F8FAFC;">
+          <img src="/logos/fleetkart-logo-option5.svg" alt="Option 5: Cyber Horizon EV Lightbar">
+        </div>
+        <div class="card-body">
+          <div>
+            <h3 class="card-title">Option 5: Cyber Horizon EV Lightbar</h3>
+            <p class="card-desc">Futuristic car front facia with an LED horizon lightbar and the original glowing cyan Fleetkart brand dot. Built for modern EV and smart fleet buyers.</p>
+          </div>
+          <div class="actions">
+            <a href="/logos/fleetkart-logo-option5.svg" download="Fleetkart-Logo-Option5.svg" class="btn btn-primary">⬇ Download SVG</a>
+            <button onclick="downloadPng('/logos/fleetkart-logo-option5.svg', 'Fleetkart-Logo-Option5.png')" class="btn btn-secondary">⬇ Download PNG</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      © 2026 Fleetkart India Technologies Pvt. Ltd. • All vector files saved offline in <code>public/logos/</code>
+    </footer>
+  </div>
+
+  <script>
+    // Convert SVG to high-res 1600x400 PNG on the fly for immediate offline saving
+    function downloadPng(svgUrl, fileName) {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = function() {
+        const canvas = document.createElement('canvas');
+        canvas.width = 1680;
+        canvas.height = 400;
+        const ctx = canvas.getContext('2d');
+        
+        // Transparent / clean background
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        
+        const a = document.createElement('a');
+        a.download = fileName;
+        a.href = canvas.toDataURL('image/png');
+        a.click();
+      };
+      img.src = svgUrl;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="opt2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="50%" stop-color="#7091E6" />
+      <stop offset="100%" stop-color="#3D52A0" />
+    </linearGradient>
+    <filter id="opt2Glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#7091E6" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Icon: Car Silhouette + Smart Kart -->
+  <g transform="translate(16, 16)">
+    <!-- Dark/Gradient Back Circle Badge -->
+    <circle cx="34" cy="34" r="34" fill="#EDE8F5" stroke="#ADBBDA" stroke-width="1.5" />
+    
+    <!-- Dynamic Car Body morphing into Kart -->
+    <path d="M16 43 L22 30 C23.5 26.5 27 24 31 24 L43 24 C46 24 48.5 25.5 50 28 L55 35 L58 35" 
+          stroke="url(#opt2Grad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    
+    <!-- Kart Basket Grid Line -->
+    <path d="M22 33 L49 33" stroke="#7091E6" stroke-width="2.5" stroke-linecap="round" opacity="0.8" />
+    <path d="M26 38 L45 38" stroke="#7091E6" stroke-width="2.5" stroke-linecap="round" opacity="0.8" />
+
+    <!-- Wheels (Representing Both Car Wheels & Shopping Cart Rollers) -->
+    <circle cx="25" cy="46" r="5" fill="#3D52A0" />
+    <circle cx="25" cy="46" r="2" fill="#FFFFFF" />
+    
+    <circle cx="47" cy="46" r="5" fill="#3D52A0" />
+    <circle cx="47" cy="46" r="2" fill="#FFFFFF" />
+
+    <!-- Group Deal Energy Sparkle -->
+    <circle cx="49" cy="19" r="3.5" fill="#10B981" />
+  </g>
+
+  <!-- Typography -->
+  <text x="104" y="52" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="33" font-weight="900" letter-spacing="-0.5" fill="#1E2E4E">
+    FLEET<tspan fill="#3D52A0">KART</tspan>
+  </text>
+
+  <!-- Tagline & India Indicator -->
+  <g transform="translate(104, 63)">
+    <circle cx="5" cy="6" r="3.5" fill="#7091E6" />
+    <text x="15" y="10" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#3D52A0" letter-spacing="1.2">
+      INDIA
+    </text>
+    <text x="56" y="10" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" fill="#64748B">
+      | Bulk Deal Automotive Exchange
+    </text>
+  </g>
+</svg>

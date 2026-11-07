@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #EDE8F5;
+  --surface-secondary: #ADBBDA;
+  --ui-muted: #8697C4;
+  --brand-deep: #3D52A0;
+  --accent-primary: #7091E6;
+}
+
+@theme {
+  --color-brand-bg: #EDE8F5;
+  --color-brand-surface: #ADBBDA;
+  --color-brand-muted: #8697C4;
+  --color-brand-deep: #3D52A0;
+  --color-brand-accent: #7091E6;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #EDE8F5;
+    color: #1E293B;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #EDE8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #ADBBDA;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8697C4;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.92; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s infinite ease-in-out;
+}
+
+@keyframes dropdown-open {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-dropdown {
+  animation: dropdown-open 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
