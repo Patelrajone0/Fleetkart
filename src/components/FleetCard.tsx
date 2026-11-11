@@ -124,13 +124,13 @@ export const FleetCard: React.FC<FleetCardProps> = ({
             <div className="flex items-center gap-1.5">
               <div className="flex items-center -space-x-1.5">
                 {fleet.joinedMembers.slice(0, 4).map((m, idx) => (
-                  <img
+                  <div
                     key={m.id || idx}
-                    src={m.avatar}
-                    alt={m.name}
                     title={`${m.name} (${m.city})`}
-                    className="w-6 h-6 rounded-full border-2 border-white object-cover shadow-xs"
-                  />
+                    className="w-6 h-6 rounded-full border-2 border-white bg-[#EDE8F5] text-[#3D52A0] font-bold text-[9px] flex items-center justify-center shadow-xs"
+                  >
+                    {m.name.slice(0, 1).toUpperCase()}
+                  </div>
                 ))}
               </div>
               <span className="text-[11px] font-semibold text-[#3D52A0]">
