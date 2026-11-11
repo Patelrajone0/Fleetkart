@@ -284,11 +284,9 @@ export const FleetRoomModal: React.FC<FleetRoomModalProps> = ({
                       key={msg.id}
                       className={`flex gap-3 items-start ${isMe ? 'flex-row-reverse' : ''}`}
                     >
-                      <img
-                        src={msg.senderAvatar}
-                        alt={msg.senderName}
-                        className="w-8 h-8 rounded-full object-cover shrink-0 border border-[#ADBBDA]"
-                      />
+                      <div className="w-8 h-8 rounded-full bg-[#EDE8F5] text-[#3D52A0] font-bold text-xs flex items-center justify-center shrink-0 border border-[#ADBBDA]">
+                        {msg.senderName.slice(0, 1).toUpperCase()}
+                      </div>
                       <div className={`max-w-[82%] sm:max-w-[70%] ${isMe ? 'items-end' : 'items-start'}`}>
                         <div className="flex items-center gap-2 mb-1">
                           <span className="text-xs font-bold text-[#3D52A0]">
