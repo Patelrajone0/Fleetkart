@@ -1,5 +1,5 @@
 import React from 'react';
-import { Car, Users, Plus } from 'lucide-react';
+import { Car, Users, Plus, User as UserIcon } from 'lucide-react';
 import { User } from '../types';
 
 interface MobileNavProps {
