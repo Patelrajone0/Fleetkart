@@ -53,11 +53,9 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
 
         {/* Profile Content */}
         <div className="p-6 text-center bg-white">
-          <img
-            src={user.avatar}
-            alt={user.name}
-            className="w-20 h-20 rounded-full object-cover mx-auto mb-3 border-2 border-[#7091E6] shadow-md"
-          />
+          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#3D52A0] to-[#7091E6] text-white mx-auto mb-3 flex items-center justify-center shadow-md">
+            <UserIcon className="w-8 h-8 text-white" />
+          </div>
           <h2 className="text-xl font-black text-[#3D52A0]">{user.name}</h2>
           <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#EDE8F5] text-[#3D52A0] text-xs font-semibold mt-1 border border-[#ADBBDA]">
             <span className="w-2 h-2 rounded-full bg-[#7091E6] animate-pulse" />
