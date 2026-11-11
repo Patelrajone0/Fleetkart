@@ -178,26 +178,31 @@ export const FleetFilterSection: React.FC<FleetFilterSectionProps> = ({
         </button>
       </div>
 
-      {/* 2. Cascading Selectors: State, City, Car Brand, Car Model, Fuel Type */}
+      {/* 2. Cascading Selectors: State, City, Car Brand, Car Model */}
       <div className="space-y-4">
         
         {/* Section Title */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div className="flex items-center gap-2 text-xs font-bold text-[#3D52A0] uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5 text-[#7091E6]" />
             <span>Filter by Location &amp; Vehicle:</span>
           </div>
 
-          {isFiltered && (
-            <button
-              type="button"
-              onClick={onResetFilters}
-              className="text-xs text-[#7091E6] hover:text-[#3D52A0] font-semibold flex items-center gap-1 cursor-pointer transition-colors"
-            >
-              <RotateCcw className="w-3 h-3" />
-              <span>Reset Filters</span>
-            </button>
-          )}
+          <div className="flex items-center gap-3">
+            <div className="text-xs text-[#1E293B]/80 font-medium">
+              Showing <strong className="text-[#3D52A0] font-bold">{totalResultsCount}</strong> Active {totalResultsCount === 1 ? 'Fleet' : 'Fleets'}
+            </div>
+            {isFiltered && (
+              <button
+                type="button"
+                onClick={onResetFilters}
+                className="text-xs text-[#7091E6] hover:text-[#3D52A0] font-semibold flex items-center gap-1 cursor-pointer transition-colors"
+              >
+                <RotateCcw className="w-3 h-3" />
+                <span>Reset Filters</span>
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Selectors Grid */}
