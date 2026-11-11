@@ -231,7 +231,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`flex items-center gap-1.5 sm:gap-2 p-1 pl-1.5 pr-2 sm:pr-2.5 rounded-full sm:rounded-2xl transition-all cursor-pointer border ${
+                className={`flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-2xl transition-all cursor-pointer border ${
                   isMenuOpen 
                     ? 'bg-[#EDE8F5] border-[#7091E6] ring-2 ring-[#7091E6]/20' 
                     : 'bg-white hover:bg-[#EDE8F5] border-[#ADBBDA]/60 hover:border-[#7091E6]'
@@ -240,17 +240,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                 aria-expanded={isMenuOpen}
                 aria-haspopup="true"
               >
-                <div className="relative">
-                  <img
-                    src={currentUser.avatar}
-                    alt={currentUser.name}
-                    className="w-8 h-8 rounded-full object-cover border-2 border-[#3D52A0]"
-                  />
-                  <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-white" />
-                </div>
-                
-                <div className="hidden sm:block text-left">
-                  <div className="text-xs font-bold text-[#3D52A0] leading-tight">{currentUser.name}</div>
+                <div className="text-left">
+                  <div className="text-xs font-bold text-[#3D52A0] leading-tight">
+                    {currentUser.name}
+                  </div>
                   <div className="text-[10px] text-[#8697C4] leading-tight font-medium">
                     {selectedState || currentUser.state || currentUser.city}
                   </div>
@@ -268,11 +261,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                   {/* User Profile Summary Header */}
                   <div className="p-3.5 bg-[#EDE8F5]/60 border-b border-[#ADBBDA]/60">
                     <div className="flex items-center gap-3">
-                      <img
-                        src={currentUser.avatar}
-                        alt={currentUser.name}
-                        className="w-10 h-10 rounded-full object-cover border-2 border-[#3D52A0] shadow-xs"
-                      />
+                      <div className="w-9 h-9 rounded-xl bg-[#3D52A0] text-white flex items-center justify-center font-bold text-sm shadow-xs shrink-0">
+                        <UserIcon className="w-4 h-4 text-white" />
+                      </div>
                       <div className="overflow-hidden">
                         <div className="text-xs font-bold text-[#3D52A0] truncate">{currentUser.name}</div>
                         <div className="text-[11px] text-[#1E293B]/70 truncate">{currentUser.email}</div>
