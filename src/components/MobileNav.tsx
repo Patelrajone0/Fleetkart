@@ -68,11 +68,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
           onClick={onOpenProfile}
           className="flex flex-col items-center gap-1 py-1 px-2 text-[#ADBBDA] hover:text-white cursor-pointer"
         >
-          <img
-            src={currentUser.avatar}
-            alt={currentUser.name}
-            className="w-5 h-5 rounded-full object-cover border border-[#7091E6]"
-          />
+          <UserIcon className="w-5 h-5" />
           <span className="text-[10px] truncate max-w-[50px]">{currentUser.city}</span>
         </button>
 
