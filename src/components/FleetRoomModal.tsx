@@ -518,11 +518,9 @@ export const FleetRoomModal: React.FC<FleetRoomModalProps> = ({
                   >
                     <div>
                       <div className="flex items-center gap-3 mb-3">
-                        <img
-                          src={member.avatar}
-                          alt={member.name}
-                          className="w-11 h-11 rounded-full object-cover border-2 border-[#7091E6]"
-                        />
+                        <div className="w-11 h-11 rounded-full bg-[#3D52A0] text-white flex items-center justify-center font-bold text-base shrink-0 border-2 border-[#7091E6]">
+                          {member.name.slice(0, 1).toUpperCase()}
+                        </div>
                         <div>
                           <div className="flex items-center gap-1.5">
                             <h4 className="font-bold text-[#3D52A0] text-sm">
