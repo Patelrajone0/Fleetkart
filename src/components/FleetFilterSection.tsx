@@ -28,8 +28,8 @@ interface FleetFilterSectionProps {
   setSelectedBrand: (brand: string) => void;
   selectedModel: string;
   setSelectedModel: (model: string) => void;
-  selectedFuel: string;
-  setSelectedFuel: (fuel: string) => void;
+  selectedFuel?: string;
+  setSelectedFuel?: (fuel: string) => void;
   onResetFilters: () => void;
   totalResultsCount: number;
 }
@@ -47,8 +47,6 @@ export const FleetFilterSection: React.FC<FleetFilterSectionProps> = ({
   setSelectedBrand,
   selectedModel,
   setSelectedModel,
-  selectedFuel,
-  setSelectedFuel,
   onResetFilters,
   totalResultsCount,
 }) => {
