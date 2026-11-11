@@ -74,8 +74,7 @@ export const FleetFilterSection: React.FC<FleetFilterSectionProps> = ({
     selectedState !== 'All States' ||
     selectedCity !== 'All Cities' ||
     selectedBrand !== 'All Brands' ||
-    selectedModel !== 'All Models' ||
-    selectedFuel !== 'All';
+    selectedModel !== 'All Models';
 
   // Memoized formatted options for custom animated select dropdowns
   const stateOptions = useMemo(() => {
