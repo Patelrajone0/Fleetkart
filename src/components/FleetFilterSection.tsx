@@ -276,35 +276,6 @@ export const FleetFilterSection: React.FC<FleetFilterSectionProps> = ({
 
         </div>
 
-        {/* 5. FUEL TYPE SELECTOR ROW */}
-        <div className="pt-2 flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
-            <span className="text-[11px] font-bold text-[#3D52A0] uppercase tracking-wider flex items-center gap-1 mr-1 shrink-0">
-              <Fuel className="w-3.5 h-3.5 text-[#7091E6]" />
-              Fuel Type:
-            </span>
-            {['All', 'Petrol', 'Diesel', 'Hybrid', 'CNG', 'Electric'].map((fuel) => (
-              <button
-                type="button"
-                key={fuel}
-                onClick={() => setSelectedFuel(fuel)}
-                className={`text-xs px-3 py-1.5 rounded-xl border font-semibold whitespace-nowrap transition-all cursor-pointer ${
-                  selectedFuel === fuel
-                    ? 'bg-[#3D52A0] text-white font-bold border-[#3D52A0] shadow-sm'
-                    : 'bg-[#EDE8F5] border-[#ADBBDA] text-[#3D52A0] hover:border-[#7091E6]'
-                }`}
-              >
-                {fuel}
-              </button>
-            ))}
-          </div>
-
-          {/* Active Results Counter Pill */}
-          <div className="text-xs text-[#1E293B]/80 font-medium">
-            Showing <strong className="text-[#3D52A0] font-bold">{totalResultsCount}</strong> Active Fleets
-          </div>
-        </div>
-
       </div>
 
     </div>
