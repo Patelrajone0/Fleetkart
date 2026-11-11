@@ -8,7 +8,8 @@ import {
   ShieldCheck, 
   LogOut,
   HelpCircle,
-  Info
+  Info,
+  User as UserIcon
 } from 'lucide-react';
 import { User as UserType } from '../types';
 
