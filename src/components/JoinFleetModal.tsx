@@ -231,9 +231,9 @@ export const JoinFleetModal: React.FC<JoinFleetModalProps> = ({
 
           {/* Escrow & Zero Risk Guarantee */}
           <div className="p-3 rounded-2xl bg-[#EDE8F5] border border-[#ADBBDA] text-[#1E293B]/80 text-xs flex items-start gap-2.5">
-            <ShieldCheck className="w-4 h-4 text-[#7091E6] shrink-0 mt-0.5" />
+            <ShieldCheck className="w-4 h-4 text-[#7091E6]" />
             <div>
-              <strong className="text-[#3D52A0]">No Upfront Obligation:</strong> Joining reserves your slot in the group. Local dealers submit sealed bulk tenders once 5 buyers lock, and you vote on the winning dealer before depositing any token.
+              <strong className="text-[#3D52A0]">No Upfront Obligation:</strong> Joining reserves your slot in the group. Local dealers submit sealed bulk tenders once {fleet.targetSize} buyers lock, and you vote on the winning dealer before depositing any token.
             </div>
           </div>
 
@@ -246,7 +246,7 @@ export const JoinFleetModal: React.FC<JoinFleetModalProps> = ({
               <CheckCircle2 className="w-5 h-5" />
               <span>
                 {isFinalSpot
-                  ? 'Join as 5th Buyer & Unlock Dealer Tenders!'
+                  ? `Join as Final Buyer (${fleet.targetSize} of ${fleet.targetSize}) & Unlock Dealer Tenders!`
                   : 'Confirm & Join This Fleet'}
               </span>
             </button>
