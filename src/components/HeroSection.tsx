@@ -1,6 +1,7 @@
 import React from 'react';
 import { 
   Sparkles, 
+  ShieldCheck,
   Tag, 
   HelpCircle,
   Lock
