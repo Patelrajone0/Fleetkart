@@ -73,37 +73,23 @@ export function App() {
   const [activeTab, setActiveTab] = useState<'fleets' | 'my-fleets'>('fleets');
   
   // Cascading Selectors: State, City, Brand, Model, Fuel
-  const [selectedState, setSelectedState] = useState<string>('Gujarat');
+  const [selectedState, setSelectedState] = useState<string>(() => currentUser?.state || 'Gujarat');
   const [selectedCity, setSelectedCity] = useState<string>('All Cities');
   const [selectedBrand, setSelectedBrand] = useState<string>('All Brands');
   const [selectedModel, setSelectedModel] = useState<string>('All Models');
   const [selectedFuel, setSelectedFuel] = useState<string>('All');
-
-  // Budget discovery & cars list state
-  const [budgetValue, setBudgetValue] = useState<number>(10);
-  const [selectedBudgetPreset, setSelectedBudgetPreset] = useState<string>('₹8–10L');
-  const [sortBy, setSortBy] = useState<'price-asc' | 'price-desc' | 'popular' | 'savings'>('price-asc');
-  const [exploreViewMode, setExploreViewMode] = useState<'cars' | 'fleets'>('cars');
 
   // Modals
   const [activeFleetRoom, setActiveFleetRoom] = useState<Fleet | null>(null);
   const [joiningFleet, setJoiningFleet] = useState<Fleet | null>(null);
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [showStateModal, setShowStateModal] = useState(false);
-  const [showCityModal, setShowCityModal] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [showHowItWorksModal, setShowHowItWorksModal] = useState(false);
   const [initialCarForCreate, setInitialCarForCreate] = useState<string | undefined>(undefined);
 
   // Toasts
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
-
-  // Initialize with user's state when logged in
-  useEffect(() => {
-    if (currentUser) {
-      if (currentUser.state) setSelectedState(currentUser.state);
-    }
-  }, [currentUser]);
 
   // Persist live user fleets
   useEffect(() => {
