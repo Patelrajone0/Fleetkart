@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   X, 
   Users, 
@@ -45,6 +45,7 @@ export const FleetRoomModal: React.FC<FleetRoomModalProps> = ({
   const [activeTab, setActiveTab] = useState<'members' | 'chat' | 'dealer-bids'>('chat');
   const [messageInput, setMessageInput] = useState('');
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const chatBottomRef = useRef<HTMLDivElement>(null);
   
   // Showroom quote share modal inside chat
   const [showQuoteForm, setShowQuoteForm] = useState(false);
@@ -55,6 +56,27 @@ export const FleetRoomModal: React.FC<FleetRoomModalProps> = ({
   // Lock deal confirmation state
   const [dealLockedSuccess, setDealLockedSuccess] = useState(false);
   const [winningDealer, setWinningDealer] = useState<string>('CG Road Hyundai');
+
+  // Close on Escape key & lock background scroll
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    const origOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = origOverflow;
+    };
+  }, [onClose]);
+
+  // Smooth autoscroll chat to latest message
+  useEffect(() => {
+    if (activeTab === 'chat') {
+      chatBottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [fleet.chatMessages.length, activeTab]);
 
   const isCreator = currentUser.id === fleet.creatorId;
 
