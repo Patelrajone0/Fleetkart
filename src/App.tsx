@@ -293,6 +293,9 @@ export function App() {
     setFleets((prev) =>
       prev.map((f) => (f.id === fleetId ? { ...f, status: 'Deal Confirmed' } : f))
     );
+    if (activeFleetRoom && activeFleetRoom.id === fleetId) {
+      setActiveFleetRoom((prev) => (prev ? { ...prev, status: 'Deal Confirmed' } : null));
+    }
     addToast('success', 'Deal Secured!', `Group token allocated for ${quote.dealerName}`);
   };
 
@@ -321,106 +324,10 @@ export function App() {
 
   // Share on WhatsApp
   const handleShareWhatsApp = (fleet: Fleet) => {
-    const text = `🚨 *FleetKart Group Booking in ${fleet.city}*\n\nTeaming up 5 buyers for bulk dealer bidding on the new *${fleet.brand} ${fleet.model}*.\n\n• Pricing: Competitive Dealer Quotes\n• *Estimated Discount: ${fleet.estimatedSavingsBadge}*\n\n${fleet.joinedMembers.length}/${fleet.targetSize} buyers joined already. Join before dealer bidding closes!`;
+    const text = `🚨 *FleetKart Group Booking in ${fleet.city}*\n\nTeaming up ${fleet.targetSize} buyers for bulk dealer bidding on the new *${fleet.brand} ${fleet.model}*.\n\n• Pricing: Competitive Dealer Quotes\n• *Estimated Discount: ${fleet.estimatedSavingsBadge}*\n\n${fleet.joinedMembers.length}/${fleet.targetSize} buyers joined already. Join before dealer bidding closes!`;
     const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
     addToast('info', 'Share link generated', 'Opening WhatsApp invite share...');
-  };
-
-  // Filter cars from CAR_CATALOG based on budget, preset, fuel & sort
-  const filteredCars = React.useMemo(() => {
-    return CAR_CATALOG.filter((car) => {
-      const minPrice = car.minPriceLakh || 8;
-      const maxPrice = car.maxPriceLakh || 12;
-
-      // 1. Budget filtering
-      if (selectedBudgetPreset === 'All Budgets') {
-        // show all
-      } else if (selectedBudgetPreset === 'Under ₹8L') {
-        if (minPrice > 8) return false;
-      } else if (selectedBudgetPreset === '₹8–10L') {
-        if (minPrice > 10 || maxPrice < 8) return false;
-      } else if (selectedBudgetPreset === '₹10–15L') {
-        if (minPrice > 15 || maxPrice < 10) return false;
-      } else if (selectedBudgetPreset === '₹15–20L') {
-        if (minPrice > 20 || maxPrice < 15) return false;
-      } else if (selectedBudgetPreset === '₹20–30L') {
-        if (minPrice > 30 || maxPrice < 20) return false;
-      } else if (selectedBudgetPreset === '₹30–60L') {
-        if (minPrice > 60 || maxPrice < 30) return false;
-      } else if (selectedBudgetPreset === '₹60L+') {
-        if (minPrice < 60) return false;
-      } else {
-        // Slider value
-        if (minPrice > budgetValue) return false;
-      }
-
-      // 2. Fuel filtering
-      if (selectedFuel !== 'All') {
-        const hasFuel = car.fuelTypes.some(
-          (f) => f.toLowerCase() === selectedFuel.toLowerCase()
-        );
-        if (!hasFuel) return false;
-      }
-
-      return true;
-    }).sort((a, b) => {
-      const minA = a.minPriceLakh || 8;
-      const minB = b.minPriceLakh || 8;
-      if (sortBy === 'price-asc') return minA - minB;
-      if (sortBy === 'price-desc') return minB - minA;
-      if (sortBy === 'savings') {
-        return (b.variantsCount || 10) - (a.variantsCount || 10);
-      }
-      return 0;
-    });
-  }, [budgetValue, selectedBudgetPreset, selectedFuel, sortBy]);
-
-  // Filter cars from CAR_CATALOG based on selectedBrand, selectedModel, and selectedFuel
-  const displayedCars = React.useMemo(() => {
-    return CAR_CATALOG.filter((car) => {
-      // 1. Brand filter
-      if (selectedBrand !== 'All Brands' && car.brand.toLowerCase() !== selectedBrand.toLowerCase()) {
-        return false;
-      }
-      // 2. Model filter
-      if (selectedModel !== 'All Models' && car.model.toLowerCase() !== selectedModel.toLowerCase()) {
-        return false;
-      }
-      // 3. Fuel filter
-      if (selectedFuel !== 'All') {
-        const matchesFuel = car.fuelTypes.some(
-          (f) => f.toLowerCase() === selectedFuel.toLowerCase()
-        );
-        if (!matchesFuel) return false;
-      }
-      return true;
-    });
-  }, [selectedBrand, selectedModel, selectedFuel]);
-
-  // Handle joining a car's group deal
-  const handleJoinCarDeal = (car: CarModel, fleet?: Fleet) => {
-    const existingFleet = fleet || fleets.find(
-      (f) =>
-        f.model.toLowerCase() === car.model.toLowerCase() ||
-        f.carId.toLowerCase() === car.id.toLowerCase()
-    );
-
-    if (existingFleet) {
-      if (isMemberOfFleet(existingFleet)) {
-        setActiveFleetRoom(existingFleet);
-      } else {
-        handleOpenJoinModal(existingFleet);
-      }
-    } else {
-      setInitialCarForCreate(car.id);
-      setShowCreateModal(true);
-      addToast(
-        'info',
-        `Start ${car.brand} ${car.model} Fleet`,
-        `Be the founding buyer in ${selectedState !== 'All States' ? selectedState : (currentUser?.state || 'your state')}! We'll assemble other buyers to unlock bulk dealer tenders.`
-      );
-    }
   };
 
   // Filtered community fleets
