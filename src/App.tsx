@@ -414,8 +414,6 @@ export function App() {
         {/* FIRST IMPRESSION: Modern Split Hero Section */}
         {activeTab === 'fleets' && (
           <HeroSection
-            selectedCity={selectedCity}
-            onOpenCityModal={() => setShowCityModal(true)}
             onOpenHowItWorks={() => setShowHowItWorksModal(true)}
             onExploreFleets={() => {
               const el = document.getElementById('fleets-section');
@@ -788,7 +786,7 @@ export function App() {
         onOpenStateModal={() => setShowStateModal(true)}
         onScrollToBudget={() => {
           setActiveTab('fleets');
-          const el = document.getElementById('budget-discovery-section');
+          const el = document.getElementById('fleets-section');
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }}
         onOpenProfile={() => setShowProfileModal(true)}
