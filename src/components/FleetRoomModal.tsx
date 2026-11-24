@@ -607,7 +607,7 @@ export const FleetRoomModal: React.FC<FleetRoomModalProps> = ({
                       Spot Available
                     </div>
                     <p className="text-[11px] text-[#8697C4] mt-1 max-w-[170px]">
-                      Share with friends in {fleet.city} to lock the 5th spot and trigger dealer bidding.
+                      Share with friends in {fleet.city} to lock spot #{currentCount + i + 1} and trigger dealer bidding.
                     </p>
                     <button
                       type="button"
