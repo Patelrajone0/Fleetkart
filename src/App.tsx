@@ -15,18 +15,15 @@ import { FleetRoomModal } from './components/FleetRoomModal';
 import { JoinFleetModal } from './components/JoinFleetModal';
 import { CreateFleetModal } from './components/CreateFleetModal';
 import { StateSelectorModal } from './components/StateSelectorModal';
-import { CitySelectorModal } from './components/CitySelectorModal';
 import { ProfileModal } from './components/ProfileModal';
 import { ToastContainer, ToastMessage } from './components/Toast';
 import { HeroSection } from './components/HeroSection';
 import { HowItWorksModal } from './components/HowItWorksModal';
-import { BudgetDiscoverySection } from './components/BudgetDiscoverySection';
 import { CarCard } from './components/CarCard';
 import { WhyFleetkartSection } from './components/WhyFleetkartSection';
 import { FleetkartComparisonSection } from './components/FleetkartComparisonSection';
 import { Footer } from './components/Footer';
 import { CAR_CATALOG } from './data/mockData';
-import { CarModel } from './types';
 
 export function App() {
   // 1. Mandatory Authentication State (defaults to DEMO_USER Raj Patel)
