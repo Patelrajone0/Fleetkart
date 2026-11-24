@@ -719,7 +719,7 @@ export const FleetRoomModal: React.FC<FleetRoomModalProps> = ({
               ₹25,000 Group Token Secured!
             </h3>
             <p className="text-xs text-[#1E293B]/70 mb-4">
-              Your 5-buyer fleet has selected {winningDealer}&apos;s tender.
+              Your {targetCount}-buyer fleet has selected {winningDealer}&apos;s tender.
             </p>
 
             <div className="p-4 rounded-2xl bg-[#EDE8F5] border border-[#ADBBDA] text-left text-xs space-y-2 mb-5">
