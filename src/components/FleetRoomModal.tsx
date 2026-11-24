@@ -359,6 +359,7 @@ export const FleetRoomModal: React.FC<FleetRoomModalProps> = ({
                     </div>
                   );
                 })}
+                <div ref={chatBottomRef} />
               </div>
 
               {/* Quick Reply Suggestions */}
@@ -516,6 +517,7 @@ export const FleetRoomModal: React.FC<FleetRoomModalProps> = ({
                     </div>
                   );
                 })}
+                <div ref={chatBottomRef} />
               </div>
             </div>
           )}
