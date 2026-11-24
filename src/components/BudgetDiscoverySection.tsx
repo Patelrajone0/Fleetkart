@@ -20,7 +20,7 @@ export interface BudgetDiscoveryProps {
   availableBrandsCount: number;
 }
 
-export const BUDGET_PRESETS = [
+const BUDGET_PRESETS = [
   { label: 'All Budgets', min: 0, max: 200 },
   { label: 'Under ₹8L', min: 0, max: 8 },
   { label: '₹8–10L', min: 8, max: 10 },
@@ -31,7 +31,7 @@ export const BUDGET_PRESETS = [
   { label: '₹60L+', min: 60, max: 200 },
 ];
 
-export const FUEL_OPTIONS: { label: string; value: string; icon?: string }[] = [
+const FUEL_OPTIONS: { label: string; value: string; icon?: string }[] = [
   { label: 'All Types', value: 'All' },
   { label: 'Petrol', value: 'Petrol', icon: '⛽' },
   { label: 'Diesel', value: 'Diesel', icon: '⛽' },
