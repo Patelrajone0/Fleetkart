@@ -1,13 +1,5 @@
 import React from 'react';
-import { 
-  ShieldCheck, 
-  Tag, 
-  MessageSquare, 
-  MapPin, 
-  Lock, 
-  Mail, 
-  CheckCircle2 
-} from 'lucide-react';
+import { MapPin, Mail } from 'lucide-react';
 
 interface FooterProps {
   onOpenHowItWorks?: () => void;
