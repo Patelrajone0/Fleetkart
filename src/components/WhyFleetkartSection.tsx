@@ -1,11 +1,4 @@
 import React from 'react';
-import { 
-  Building2, 
-  TrendingUp, 
-  Gift, 
-  ShieldCheck, 
-  Unlock 
-} from 'lucide-react';
 
 export const WhyFleetkartSection: React.FC = () => {
   const benefits = [
