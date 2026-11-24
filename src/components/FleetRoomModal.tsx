@@ -421,7 +421,7 @@ export const FleetRoomModal: React.FC<FleetRoomModalProps> = ({
                   </p>
                 </div>
                 <div className="text-xs bg-[#7091E6] text-white px-3 py-1.5 rounded-xl font-bold shadow-xs shrink-0">
-                  Bulk Tender for 5 Units
+                  Bulk Tender for {targetCount} Units
                 </div>
               </div>
 
