@@ -40,7 +40,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   onSelectState,
   onOpenStateModal,
   selectedCity,
-  onOpenCityModal,
   onOpenHowItWorks,
   onLogout,
 }) => {
