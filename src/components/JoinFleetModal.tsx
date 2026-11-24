@@ -86,8 +86,14 @@ export const JoinFleetModal: React.FC<JoinFleetModalProps> = ({
   ];
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#3D52A0]/40 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
-      <div className="w-full max-w-lg bg-white border border-[#ADBBDA] rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+    <div 
+      className="fixed inset-0 z-50 bg-[#3D52A0]/40 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 overflow-y-auto"
+      onClick={onClose}
+    >
+      <div 
+        className="w-full max-w-lg bg-white border border-[#ADBBDA] rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200"
+        onClick={(e) => e.stopPropagation()}
+      >
         
         {/* Top Header */}
         <div className="bg-[#3D52A0] border-b border-[#3D52A0] p-5 flex items-center justify-between text-white">
@@ -102,7 +108,7 @@ export const JoinFleetModal: React.FC<JoinFleetModalProps> = ({
                 </span>
                 {isFinalSpot && (
                   <span className="bg-[#7091E6] text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full animate-pulse">
-                    5th Final Spot!
+                    Final Spot to Lock Deal!
                   </span>
                 )}
               </div>
