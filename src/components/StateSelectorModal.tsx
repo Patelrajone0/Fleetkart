@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Search, Map, Check } from 'lucide-react';
 import { INDIAN_STATES_LIST } from '../data/carBrandsData';
 
@@ -15,6 +15,20 @@ export const StateSelectorModal: React.FC<StateSelectorModalProps> = ({
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
+  // Close on Escape key & lock background scroll
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    const origOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = origOverflow;
+    };
+  }, [onClose]);
+
   const filteredStates = INDIAN_STATES_LIST.filter((item) => {
     const term = searchTerm.toLowerCase().trim();
     return (
@@ -25,8 +39,14 @@ export const StateSelectorModal: React.FC<StateSelectorModalProps> = ({
   }).sort((a, b) => a.name.localeCompare(b.name));
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#1E2E4E]/40 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 overflow-y-auto animate-in fade-in duration-150">
-      <div className="w-full max-w-md bg-white border border-[#ADBBDA] rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[70vh] animate-dropdown">
+    <div 
+      className="fixed inset-0 z-50 bg-[#1E2E4E]/40 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 overflow-y-auto animate-in fade-in duration-150"
+      onClick={onClose}
+    >
+      <div 
+        className="w-full max-w-md bg-white border border-[#ADBBDA] rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[70vh] animate-dropdown"
+        onClick={(e) => e.stopPropagation()}
+      >
         
         {/* Top Header */}
         <div className="bg-[#3D52A0] border-b border-[#3D52A0] p-5 flex items-center justify-between text-white shrink-0">
