@@ -32,7 +32,7 @@ export function App() {
     if (saved) {
       try {
         return JSON.parse(saved);
-      } catch (e) {
+      } catch {
         return DEMO_USER;
       }
     }
