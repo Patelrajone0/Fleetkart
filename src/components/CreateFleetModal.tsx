@@ -381,7 +381,7 @@ export const CreateFleetModal: React.FC<CreateFleetModalProps> = ({
             </label>
             <CustomSelect
               value={selectedModel}
-              onChange={(val) => setSelectedModel(val)}
+              onChange={(val) => handleModelChange(val)}
               options={modelOptions}
               placeholder="Select Model"
               searchPlaceholder="Find model..."
