@@ -531,7 +531,7 @@ export const FleetRoomModal: React.FC<FleetRoomModalProps> = ({
                     {fleet.city} Buyers Roster
                   </h3>
                   <p className="text-xs text-[#1E293B]/70">
-                    5 buyers teaming up for maximum dealer discount on {fleet.model}.
+                    {targetCount} buyers teaming up for maximum dealer discount on {fleet.model}.
                   </p>
                 </div>
                 <div className="text-xs font-bold text-white bg-[#7091E6] px-3 py-1 rounded-full shadow-xs">
