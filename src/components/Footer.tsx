@@ -126,7 +126,7 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onOpenProfile}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  Sign In
+                  My Profile
                 </button>
               </li>
             </ul>
