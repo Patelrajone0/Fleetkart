@@ -2,10 +2,8 @@ import React from 'react';
 import { 
   Check, 
   Fuel, 
-  ArrowUpDown, 
-  SlidersHorizontal 
+  ArrowUpDown 
 } from 'lucide-react';
-import { FuelType } from '../types';
 import { CustomSelect } from './CustomSelect';
 
 export interface BudgetDiscoveryProps {
