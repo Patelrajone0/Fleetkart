@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   X, 
   ShieldCheck, 
@@ -30,6 +30,20 @@ export const JoinFleetModal: React.FC<JoinFleetModalProps> = ({
   const [selectedColor, setSelectedColor] = useState('Polar White');
   const [selectedArea, setSelectedArea] = useState(currentUser.city === 'Ahmedabad' ? 'Satellite / SG Highway' : 'Central Area');
   const [readiness, setReadiness] = useState<ReadinessStatus>('Token Ready (₹25k)');
+
+  // Close on Escape key & lock background scroll
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    const origOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = origOverflow;
+    };
+  }, [onClose]);
 
   const currentCount = fleet.joinedMembers.length;
   const isFinalSpot = currentCount === fleet.targetSize - 1;
