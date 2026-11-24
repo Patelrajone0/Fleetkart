@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X, Car, Users, Building2, CheckCircle2, ShieldCheck, ArrowRight, Sparkles } from 'lucide-react';
 
 interface HowItWorksModalProps {
@@ -12,6 +12,21 @@ export const HowItWorksModal: React.FC<HowItWorksModalProps> = ({
   onClose,
   onStartFleet,
 }) => {
+  // Close on Escape key & lock background scroll
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    const origOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = origOverflow;
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const steps = [
