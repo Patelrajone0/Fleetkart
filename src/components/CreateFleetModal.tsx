@@ -207,13 +207,6 @@ export const CreateFleetModal: React.FC<CreateFleetModalProps> = ({
     { value: '30', label: 'Within 30 Days (End of Month Target)' },
   ];
 
-  // Sync default fuel & transmission when metadata updates for selected car
-  useEffect(() => {
-    if (!availableFuels.includes(fuelType)) {
-      setFuelType(meta.defaultFuel);
-    }
-  }, [availableFuels, meta.defaultFuel, fuelType]);
-
   // Close on Escape key & lock background scroll
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
