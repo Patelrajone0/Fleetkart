@@ -119,13 +119,25 @@ export const CreateFleetModal: React.FC<CreateFleetModalProps> = ({
     return getCarImageUrl(selectedBrand, selectedModel);
   }, [selectedBrand, selectedModel]);
 
-  // When Company changes, auto-select its first available model
+  // When Company changes, auto-select its first available model and reset fuel & transmission
   const handleBrandChange = (newBrand: string) => {
     setSelectedBrand(newBrand);
     const models = getModelsForBrand(newBrand);
     if (models.length > 0) {
-      setSelectedModel(models[0]);
+      const nextModel = models[0];
+      setSelectedModel(nextModel);
+      const nextMeta = getCarModelMetadata(newBrand, nextModel);
+      setFuelType(nextMeta.defaultFuel);
+      setTransmission(nextMeta.defaultTransmission);
     }
+  };
+
+  // When Model changes, sync default fuel & transmission
+  const handleModelChange = (newModel: string) => {
+    setSelectedModel(newModel);
+    const nextMeta = getCarModelMetadata(selectedBrand, newModel);
+    setFuelType(nextMeta.defaultFuel);
+    setTransmission(nextMeta.defaultTransmission);
   };
 
   // Fuel options always includes Electric as requested
