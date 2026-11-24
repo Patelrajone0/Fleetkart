@@ -141,8 +141,14 @@ export const FleetRoomModal: React.FC<FleetRoomModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#3D52A0]/40 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 overflow-y-auto">
-      <div className="w-full max-w-4xl bg-white border border-[#ADBBDA] rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh] animate-in fade-in zoom-in-95 duration-200">
+    <div 
+      className="fixed inset-0 z-50 bg-[#3D52A0]/40 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 overflow-y-auto"
+      onClick={onClose}
+    >
+      <div 
+        className="w-full max-w-4xl bg-white border border-[#ADBBDA] rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh] animate-in fade-in zoom-in-95 duration-200"
+        onClick={(e) => e.stopPropagation()}
+      >
         
         {/* Top Header */}
         <div className="bg-[#3D52A0] border-b border-[#3D52A0] p-4 sm:p-5 flex items-center justify-between text-white">
