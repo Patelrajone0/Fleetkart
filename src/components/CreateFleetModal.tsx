@@ -303,10 +303,16 @@ export const CreateFleetModal: React.FC<CreateFleetModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#0F172A]/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 lg:p-8 overflow-hidden animate-in fade-in duration-200">
+    <div 
+      className="fixed inset-0 z-50 bg-[#0F172A]/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 lg:p-8 overflow-hidden animate-in fade-in duration-200"
+      onClick={onClose}
+    >
       
       {/* Centered Modal Card with Safe Margins on all 4 Sides */}
-      <div className="w-full max-w-xl max-h-[88vh] bg-white border border-[#ADBBDA] rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-200">
+      <div 
+        className="w-full max-w-xl max-h-[88vh] bg-white border border-[#ADBBDA] rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-200"
+        onClick={(e) => e.stopPropagation()}
+      >
         
         {/* Sticky Header */}
         <div className="shrink-0 bg-[#3D52A0] border-b border-[#3D52A0] p-4 sm:p-5 flex items-center justify-between text-white">
